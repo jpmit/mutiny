@@ -27,4 +27,5 @@ add_subdirectory(src/tools/buccaneer)
 add_subdirectory(src/tools/editor)
 add_subdirectory(src/experiment)
 add_subdirectory(src/baastud)
+add_subdirectory(src/blocks)
 
