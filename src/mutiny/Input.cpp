@@ -126,6 +126,16 @@ int Input::translateButton(int input)
   }
 }
 
+void Input::hideMouseCursor()
+{
+  SDL_ShowCursor(0);
+}
+
+void Input::showMouseCursor()
+{
+  SDL_ShowCursor(1);
+}
+
 }
 
 }

@@ -29,6 +29,9 @@ public:
   static bool getMouseButtonUp(int button);
   static bool getMouseButtonDown(int button);
 
+  static void hideMouseCursor();
+  static void showMouseCursor();
+
 private:
   static std::vector<int> keys;
   static std::vector<int> upKeys;
