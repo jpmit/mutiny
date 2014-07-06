@@ -1,6 +1,8 @@
 #ifndef GAMESCREEN_H
 #define GAMESCREEN_H
 
+#include "Block.h"
+
 #include <mutiny/mutiny.h>
 
 #include <memory>
@@ -14,11 +16,12 @@ public:
 
   virtual void onAwake();
   virtual void onGui();
+  // onStart is called on the first update
+  virtual void onStart();
 
 private:
-  Texture2d* wwwTexture;
-  Texture2d* titleTexture;
   GameObject* cameraGo;
+  Texture2d* crosshairs;
 
 };
 

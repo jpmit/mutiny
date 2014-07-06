@@ -6,8 +6,9 @@ using namespace mutiny::engine;
 
 void SceneManager::onAwake()
 {
-  // don't get rid of the gameobject that holds a shared_ptr to this
-  // component (the SceneManager object) when we load a new level
+  // the gameobject that holds a shared_ptr to this component (the
+  // SceneManager object) should not be destroyed when we load a new
+  // level.
   dontDestroyOnLoad(getGameObject());
   loadLevel();
 }

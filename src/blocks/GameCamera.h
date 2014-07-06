@@ -1,0 +1,30 @@
+#ifndef GAMECAMERA_H
+#define GAMECAMERA_H
+
+#include <mutiny/mutiny.h>
+
+#include <memory>
+#include <vector>
+
+using namespace mutiny::engine;
+
+class GameCamera : public Behaviour
+{
+public:
+  static GameObject* create();
+
+  virtual void onAwake();
+  virtual void onStart();
+  virtual void onUpdate();
+  virtual void onGui();
+
+  void setActive();
+private:
+  bool active;
+  bool timeActive;
+  float totTime;
+  Camera* camera;
+};
+
+#endif
+
