@@ -18,11 +18,17 @@ std::vector<int> Input::mouseButtons;
 std::vector<int> Input::downMouseButtons;
 std::vector<int> Input::upMouseButtons;
 Vector3 Input::mousePosition;
+Vector3 Input::mouseDelta;
 Vector3 Input::mouseDownPosition;
 
 Vector3 Input::getMousePosition()
 {
   return mousePosition;
+}
+
+Vector3 Input::getMouseDelta()
+{
+  return mouseDelta;
 }
 
 bool Input::getKey(int keyCode)
@@ -136,7 +142,17 @@ void Input::showMouseCursor()
   SDL_ShowCursor(1);
 }
 
+void Input::grabInput(bool on)
+{
+  if (on == true)
+  {
+    SDL_WM_GrabInput(SDL_GRAB_ON);
+  }
+  else
+  {
+    SDL_WM_GrabInput(SDL_GRAB_OFF);
+  }
 }
 
 }
-
+}

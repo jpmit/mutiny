@@ -24,6 +24,7 @@ public:
   static const int MOUSE0 = 99990;
   static const int MOUSE1 = 99991;
   static const int MOUSE2 = 99992;
+  static const int ESC = SDLK_ESCAPE;
 
 };
 

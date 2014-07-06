@@ -25,12 +25,14 @@ public:
   static bool getKeyDown(int keyCode);
   static bool getKeyUp(int keyCode);
   static Vector3 getMousePosition();
+  static Vector3 getMouseDelta();
   static bool getMouseButton(int button);
   static bool getMouseButtonUp(int button);
   static bool getMouseButtonDown(int button);
 
   static void hideMouseCursor();
   static void showMouseCursor();
+  static void grabInput(bool);
 
 private:
   static std::vector<int> keys;
@@ -40,6 +42,7 @@ private:
   static std::vector<int> upMouseButtons;
   static std::vector<int> downMouseButtons;
   static Vector3 mousePosition;
+  static Vector3 mouseDelta;
   static Vector3 mouseDownPosition;
   static int translateButton(int input);
 

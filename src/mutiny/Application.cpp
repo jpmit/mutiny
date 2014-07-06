@@ -278,6 +278,9 @@ void Application::loop()
   Screen::width = screen->w;
   Screen::height = screen->h;
 
+  Input::mouseDelta.x = 0;
+  Input::mouseDelta.y = 0;
+
   while(SDL_PollEvent(&event))
   {
     if(event.type == SDL_QUIT)
@@ -290,7 +293,7 @@ void Application::loop()
     }
     else if(event.type == SDL_MOUSEMOTION)
     {
-      motion(event.motion.x, event.motion.y);
+      motion(event.motion.x, event.motion.y, event.motion.xrel, event.motion.yrel);
     }
     else if(event.type == SDL_MOUSEBUTTONDOWN)
     {
@@ -536,10 +539,13 @@ void Application::idle()
   destroyedGos.clear();
 }
 
-void Application::motion(int x, int y)
+void Application::motion(int x, int y, int dx, int dy)
 {
   Input::mousePosition.x = x;
   Input::mousePosition.y = y;
+  // += since we could have multiple MOUSEMOTION events every frame
+  Input::mouseDelta.x += dx;
+  Input::mouseDelta.y += dy;
 }
 
 void Application::mouse(int button, int state, int x, int y)
