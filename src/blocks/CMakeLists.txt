@@ -4,8 +4,10 @@ add_executable(blocks
   GameCamera.cpp
   GameScreen.cpp
   Ground.cpp
+  Player.cpp
   main.cpp
   SceneManager.cpp
+  World.cpp
 )
 
 target_link_libraries(blocks mutiny)

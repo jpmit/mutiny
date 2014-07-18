@@ -12,14 +12,14 @@ GameObject* Block::create()
 
 void Block::onUpdate()
 {
-  getGameObject()->getTransform()->rotate(Vector3(20, 0, 0) * Time::getDeltaTime());
+  //getGameObject()->getTransform()->rotate(Vector3(20, 0, 0) * Time::getDeltaTime());
 }
 
 GameObject* Block::create(Vector3 pos)
 {
   GameObject* mainGo = new GameObject("Block");
   Block* cube = mainGo->addComponent<Block>();
-  mainGo->getTransform()->setPosition(pos);
+  mainGo->getTransform()->setPosition(pos + Vector3(0.5, 0, 0.5));
 
   return mainGo;
 }

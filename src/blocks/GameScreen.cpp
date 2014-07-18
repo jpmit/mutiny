@@ -2,6 +2,8 @@
 #include "Block.h"
 #include "GameCamera.h"
 #include "Ground.h"
+#include "Player.h"
+#include "World.h"
 
 #include <iostream>
 
@@ -29,15 +31,9 @@ void GameScreen::onGui()
 
 void GameScreen::onStart()
 {
-  cameraGo = GameCamera::create();
-
-  Block::create(Vector3(0, 0, 0));
-  
-  for (int i = 0; i < 10; ++i)
-  {
-    Block::create();
-  }
-
+  GameObject* worldGo = World::create();
+  playerGo = Player::create(worldGo);
+  cameraGo = GameCamera::create(playerGo);
   Ground::create();
 }
 

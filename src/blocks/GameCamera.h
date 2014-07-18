@@ -11,19 +11,15 @@ using namespace mutiny::engine;
 class GameCamera : public Behaviour
 {
 public:
-  static GameObject* create();
+  static GameObject* create(GameObject* player);
 
   virtual void onAwake();
-  virtual void onStart();
   virtual void onUpdate();
   virtual void onGui();
-
-  void setActive();
+  
 private:
-  bool active;
-  bool timeActive;
-  float totTime;
   Camera* camera;
+  GameObject* playerGo;
 };
 
 #endif

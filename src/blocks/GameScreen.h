@@ -20,6 +20,7 @@ public:
   virtual void onStart();
 
 private:
+  GameObject* playerGo;
   GameObject* cameraGo;
   Texture2d* crosshairs;
 
